@@ -11,22 +11,17 @@
       <Glow />
    </effect>
    <children>
-      <Button fx:id="question1" layoutX="89.0" layoutY="53.0" mnemonicParsing="false" onAction="#fireQueryOne" prefHeight="150.0" prefWidth="511.0" text="What is the correlation between events in both the national political violence dataset and the national events dataset?" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true">
-         <font>
-            <Font name="System Bold" size="17.0" />
-         </font>
-      </Button>
       <Button fx:id="question4" layoutX="89.0" layoutY="225.0" mnemonicParsing="false" onAction="#fireQueryFour" prefHeight="150.0" prefWidth="511.0" text="What are the coordinates of the location of the riot that caused the death of Elijah Lovejoy?" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Button>
-      <Button fx:id="question2" layoutX="645.0" layoutY="53.0" mnemonicParsing="false" onAction="#fireQueryTwo" prefHeight="150.0" prefWidth="511.0" text="What classifications are attributed to riot that caused the death of Elijah Lovejoy?" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true">
+      <Button fx:id="question2" layoutX="327.0" layoutY="61.0" mnemonicParsing="false" onAction="#fireQueryTwo" prefHeight="150.0" prefWidth="511.0" text="What classifications are attributed to riot that caused the death of Elijah Lovejoy?" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Button>
-      <Button fx:id="question3" layoutX="1215.0" layoutY="53.0" mnemonicParsing="false" onAction="#fireQueryThree" prefHeight="150.0" prefWidth="511.0" text="What classifications are attributed to the riot in Baltimore, MaryLand?" textAlignment="CENTER" wrapText="true">
+      <Button fx:id="question3" layoutX="884.0" layoutY="52.0" mnemonicParsing="false" onAction="#fireQueryThree" prefHeight="150.0" prefWidth="511.0" text="What classifications are attributed to the riot in Baltimore, MaryLand?" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>

@@ -24,9 +24,6 @@ import javafx.scene.control.TextArea;
 
 public class GUIController implements Initializable{
 	
-	@FXML // fx:id="question1"
-    private Button question1; // Value injected by FXMLLoader
-
     @FXML // fx:id="question4"
     private Button question4; // Value injected by FXMLLoader
 
@@ -67,22 +64,12 @@ public class GUIController implements Initializable{
     
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
-    	schema = FileManager.get().loadModel("file:Project_16_45.owl");
-    	data = FileManager.get().loadModel("file:Project_16_45.rdf");
+    	schema = FileManager.get().loadModel("file:Project_18_50.owl");
+    	data = FileManager.get().loadModel("file:Project_18_50.rdf");
     	reasoner = ReasonerRegistry.getOWLReasoner();
     	reasoner = reasoner.bindSchema(schema);
     	infmodel = ModelFactory.createInfModel(reasoner, data);
 	}
-    
-    /*private String prefix = "PREFIX owl: <http://www.w3.org/2002/07/owl#>"+"\n"+
-		"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>"+"\n"+
-		"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>"+"\n"+
-		"PREFIX pv: <http://dacura.cs.tcd.ie/data/politicalviolence#>"+"\n"+
-		"PREFIX ev: <http://www.heml.org/schemas/2003-09-17/>"+"\n"+
-		"PREFIX nvpe: <http://www.co-ode.org/ontologies/ont.owl#>"+"\n"+
-        "PREFIX uspv: <http://dacura.cs.tcd.ie/data/politicalviolence/uspv/>"+"\n"+
-		"PREFIX geo:<http://www.w3.org/2003/01/geo/wgs84_pos#>"
-        + "\n";*/
     
     private String prefix = "PREFIX owl: <http://www.w3.org/2002/07/owl#>"+
     	"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>"+
@@ -93,14 +80,8 @@ public class GUIController implements Initializable{
     	"PREFIX geo:<http://www.w3.org/2003/01/geo/wgs84_pos#>"+
     	"PREFIX clon: <http://www.semanticweb.org/claire/ontologies/2016/3/newOntology#>"+
     	"PREFIX foaf: <http://xmlns.com/foaf/0.1/>"+
-    	"PREFIX dbo: <http://live.dbpedia.org/ontology/>";
-
-    @FXML
-    void fireQueryOne(ActionEvent event) {
-    	this.resultTextBox.setText("Firing query one.");
-    	    	
-    	//runQueryAndShow(query);
-    }
+    	"PREFIX dbo: <http://live.dbpedia.org/ontology/>"+
+    	"PREFIX code: <http://www.co-ode.org/ontologies/ont.owl#>";
 
     @FXML
     void fireQueryTwo(ActionEvent event) {
@@ -228,10 +209,30 @@ public class GUIController implements Initializable{
     void fireQueryNine(ActionEvent event) {
     	this.resultTextBox.setText("Firing query nine.");
     	
-    	//String query = prefix+
+    	String query = prefix+
+    	/*"SELECT ?b WHERE {"+
+    		"?a rdf:type ev:hemlPerson ;"+
+    		"code:presidentTermStart ?x ;"+
+    		"code:presidentTermEnd ?w ."+
+    		"?b rdf:type nvpe:USPVNotUSNationalEvent ;"+
+    		"ev:hemlSimpleTime ?y ."+
+    		"FILTER (?y > ?x && ?y > ?w )"+
+    	"}";*/
     	
+    	"SELECT ?c WHERE {"+
+    		
+    		"?a rdf:type ev:hemlPerson ;"+
+    		"code:presidentTermStart ?x ;"+
+    		"code:presidentTermEnd ?w ."+
+    		
+    		"?b rdf:type nvpe:USPVNotUSNationalEvent ;"+
+    		"ev:hemlSimpleTime ?y ;"+
+    		"pv:description ?c ."+
+    		
+    		"FILTER (?y > ?x && ?y > ?w )"+
+    	"}";
     	
-    	//runQueryAndShow(query);
+    	runQueryAndShow(query);
     }
     
     @FXML
@@ -239,13 +240,21 @@ public class GUIController implements Initializable{
     	this.resultTextBox.setText("Firing query ten.");
     	
     	String query = prefix+
-    	"SELECT ?x ?y WHERE {"+
+    	/*"SELECT ?x ?y WHERE {"+
     		
 		"?a rdf:type foaf:Person ;"+
 		"rdfs:label ?x ;"+
 		"dbo:abstract ?y ."+
 		
 		"FILTER regex(?x, \"Elijah\")"+
+    	"}";*/
+    	
+    	"SELECT ?y WHERE {"+
+    		
+    		"?a rdf:type nvpe:dbPerson ;"+
+    		"dbo:abstract ?y ."+
+    		
+    		"FILTER regex(?y, \"Elijah\")"+
     	"}";
     	
     	runQueryAndShow(query);
