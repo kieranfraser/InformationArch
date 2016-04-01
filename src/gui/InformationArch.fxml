@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1600.0" prefWidth="1800.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.GUIController">
+   <effect>
+      <Glow />
+   </effect>
+   <children>
+      <Button fx:id="question1" layoutX="89.0" layoutY="53.0" mnemonicParsing="false" onAction="#fireQueryOne" prefHeight="150.0" prefWidth="511.0" text="What is the correlation between events in both the national political violence dataset and the national events dataset?" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="question4" layoutX="89.0" layoutY="225.0" mnemonicParsing="false" onAction="#fireQueryFour" prefHeight="150.0" prefWidth="511.0" text="What are the coordinates of the location of the riot that caused the death of Elijah Lovejoy?" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="question2" layoutX="645.0" layoutY="53.0" mnemonicParsing="false" onAction="#fireQueryTwo" prefHeight="150.0" prefWidth="511.0" text="What classifications are attributed to riot that caused the death of Elijah Lovejoy?" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="question3" layoutX="1215.0" layoutY="53.0" mnemonicParsing="false" onAction="#fireQueryThree" prefHeight="150.0" prefWidth="511.0" text="What classifications are attributed to the riot in Baltimore, MaryLand?" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="question5" layoutX="645.0" layoutY="235.0" mnemonicParsing="false" onAction="#fireQueryFive" prefHeight="150.0" prefWidth="511.0" text="What are the coordinates of the location of the Boston Mob?" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="question6" layoutX="1215.0" layoutY="227.0" mnemonicParsing="false" onAction="#fireQuerySix" prefHeight="150.0" prefWidth="511.0" text="Compare descriptions from both sources." textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="question7" layoutX="89.0" layoutY="428.0" mnemonicParsing="false" onAction="#fireQuerySeven" prefHeight="150.0" prefWidth="511.0" text="Compare descriptions from both sources." textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="question8" layoutX="645.0" layoutY="436.0" mnemonicParsing="false" onAction="#fireQueryEight" prefHeight="150.0" prefWidth="511.0" text="Return all events that occurred in Missouri." textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="question9" layoutX="1215.0" layoutY="458.0" mnemonicParsing="false" onAction="#fireQueryNine" prefHeight="150.0" prefWidth="511.0" text="Show all events that occurred during the presidency of James Monroe." textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="question10" layoutX="89.0" layoutY="614.0" mnemonicParsing="false" onAction="#fireQueryTen" prefHeight="150.0" prefWidth="511.0" text="Show a description of Elijah Parish Lovejoy" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <TextArea fx:id="resultTextBox" layoutX="121.0" layoutY="864.0" prefHeight="524.0" prefWidth="1551.0" />
+      <Button fx:id="question11" layoutX="640.0" layoutY="618.0" mnemonicParsing="false" onAction="#fireQueryEleven" prefHeight="150.0" prefWidth="511.0" text="Some information on James Monroe" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
